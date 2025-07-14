@@ -2,56 +2,50 @@
 chcp 65001 >nul
 setlocal
 
+:: Конфигурация
 set REPO_DIR=../.
+set COMMIT_MSG="Update: %date% %time:~0,8%"
 
-:: Форматируем дату и время без десятых секунды
-for /f "tokens=1-3 delims=." %%a in ("%time%") do set CLEAN_TIME=%%a
-set COMMIT_MSG="Update: %date% %CLEAN_TIME%"
-
-:: Проверка Git
-where git >nul 2>&1
-if %errorlevel% neq 0 (
-    echo Ошибка: Git не установлен или не добавлен в PATH.
+:: Проверка наличия Git
+where git >nul 2>&1 || (
+    echo Ошибка: Git не установлен или не добавлен в PATH
     pause
     exit /b 1
 )
 
-if not exist "%REPO_DIR%" (
-    echo Ошибка: Папка "%REPO_DIR%" не найдена.
+:: Проверка существования директории репозитория
+if not exist "%REPO_DIR%\" (
+    echo Ошибка: Папка репозитория не найдена
     pause
     exit /b 1
 )
 
-cd %REPO_DIR%
-
-:: Проверяем есть ли изменения
-git diff --quiet --exit-code 2>nul
-set HAS_CHANGES=%errorlevel%
-
-if %HAS_CHANGES% equ 0 (
-    git diff --cached --quiet --exit-code 2>nul
-    set HAS_CHANGES=%errorlevel%
+:: Переход в директорию репозитория
+cd /d "%REPO_DIR%" || (
+    echo Ошибка перехода в папку репозитория
+    pause
+    exit /b 1
 )
 
-if %HAS_CHANGES% equ 0 (
+:: Проверка наличия изменений
+git diff --quiet --exit-code 2>nul && git diff --cached --quiet --exit-code 2>nul && (
     echo Рабочая директория чиста. Нет изменений для коммита.
-    goto END
+    pause
+    exit /b 0
 )
 
-echo Добавляем все изменения...
+:: Выполнение git-операций
+echo Добавляем изменения...
 git add --all >nul 2>&1
 
-echo Коммитим: %COMMIT_MSG%
+echo Создаём коммит...
 git commit -m %COMMIT_MSG% >nul 2>&1
 
-:PUSH
-echo Пушим изменения...
-git push >nul 2>&1
-if %errorlevel% equ 0 (
+echo Отправляем изменения...
+git push >nul 2>&1 && (
     echo Успешно залито в GitHub!
-) else (
-    echo Ошибка при пуше изменений.
+) || (
+    echo Ошибка при отправке изменений
 )
 
-:END
 pause
