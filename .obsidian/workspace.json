@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AModule/Узлы.md",
+                "file": "Разное/Солнцезащитные средства.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Узлы"
+              "title": "Солнцезащитные средства"
             }
           }
         ],
@@ -197,8 +197,9 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "fd5c3c029ff2ada8",
+  "active": "0990c7c6d5a1d319",
   "lastOpenFiles": [
+    "AModule/Узлы.md",
     "test-private/README.md",
     "test-private",
     "_internal/attachments",
@@ -211,7 +212,6 @@
     "Без названия",
     "Obsidian",
     "Автомобили",
-    "AModule/Узлы.md",
     "Obsidian/Плагины для Obsidian.md",
     "Разное/Солнцезащитные средства.md",
     "AModule",
