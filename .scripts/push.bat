@@ -32,7 +32,7 @@ if %errorlevel% neq 0 (
 )
 
 echo Пушим...
-git push
+git push --quiet
 if %errorlevel% neq 0 (
     echo Ошибка при пуше.
     pause
