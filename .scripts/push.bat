@@ -24,25 +24,34 @@ if not exist "%REPO_DIR%" (
 
 cd %REPO_DIR%
 
-echo Проверяем изменения...
-git status --porcelain >nul
-if %errorlevel% equ 0 (
-    echo Обнаружены изменения для коммита.
-    echo Добавляем все изменения...
-    git add --all
+:: Проверяем есть ли изменения
+git diff --quiet --exit-code 2>nul
+set HAS_CHANGES=%errorlevel%
 
-    echo Коммитим: %COMMIT_MSG%
-    git commit -m %COMMIT_MSG% --quiet
-
-    echo Пушим изменения...
-    git push --quiet
-    if %errorlevel% equ 0 (
-        echo Успешно залито в GitHub!
-    ) else (
-        echo Ошибка при пуше изменений.
-    )
-) else (
-    echo Нет изменений для коммита. Рабочая директория чиста.
+if %HAS_CHANGES% equ 0 (
+    git diff --cached --quiet --exit-code 2>nul
+    set HAS_CHANGES=%errorlevel%
 )
 
+if %HAS_CHANGES% equ 0 (
+    echo Рабочая директория чиста. Нет изменений для коммита.
+    goto END
+)
+
+echo Добавляем все изменения...
+git add --all >nul 2>&1
+
+echo Коммитим: %COMMIT_MSG%
+git commit -m %COMMIT_MSG% >nul 2>&1
+
+:PUSH
+echo Пушим изменения...
+git push >nul 2>&1
+if %errorlevel% equ 0 (
+    echo Успешно залито в GitHub!
+) else (
+    echo Ошибка при пуше изменений.
+)
+
+:END
 pause
