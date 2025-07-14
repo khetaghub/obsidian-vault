@@ -24,7 +24,7 @@ echo Добавляем все изменения...
 git add --all
 
 echo Коммитим: %COMMIT_MSG%
-git commit -m %COMMIT_MSG%
+git commit -m %COMMIT_MSG% --quiet
 if %errorlevel% neq 0 (
     echo Нет изменений для коммита или ошибка.
     pause
