@@ -23,7 +23,7 @@ if not exist "%REPO_DIR%\" (
 echo Обновление...
 git pull --quiet --autostash 2>nul
 
-echo Обновление завершено
+echo Обновление завершено.
 
 :: Завершение
 pause

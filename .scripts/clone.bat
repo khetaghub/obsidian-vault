@@ -1,5 +1,5 @@
 @echo off
-chcp 65001
+chcp 65001 >nul
 setlocal
 
 set REPO_URL=git@github.com:khetaghub/obsidian-vault.git
