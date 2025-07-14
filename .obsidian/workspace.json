@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian/Callouts.md",
+                "file": "Разное/Солнцезащитные средства.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Callouts"
+              "title": "Солнцезащитные средства"
             }
           }
         ]
@@ -33,12 +33,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian/Callouts.md",
+                "file": "Разное/Солнцезащитные средства.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Callouts"
+              "title": "Солнцезащитные средства"
             }
           }
         ]
@@ -188,17 +188,17 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "0f3d5512403b99a7",
+  "active": "0a676b4c24cc74d5",
   "lastOpenFiles": [
+    "Obsidian/Callouts.md",
+    "Разное/Солнцезащитные средства.md",
     "Obsidian/Плагины для Obsidian.md",
     "2025-07-14.md",
     "Без названия.canvas",
-    "Obsidian/Callouts.md",
     "AModule/Узлы.md",
     "Internal link.md",
     "AModule/Темы для курсов.md",
     "Программирование/SSH.md",
-    "Разное/Солнцезащитные средства.md",
     "test-private/README.md",
     "test-private",
     "_internal/attachments",
