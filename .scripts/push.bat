@@ -3,7 +3,10 @@ chcp 65001
 setlocal
 
 set REPO_DIR=../.
-set COMMIT_MSG="Update: %date% %time%"
+
+:: Форматируем дату и время без десятых секунды
+for /f "tokens=1-3 delims=." %%a in ("%time%") do set CLEAN_TIME=%%a
+set COMMIT_MSG="Update: %date% %CLEAN_TIME%
 
 :: Проверка Git
 where git >nul 2>&1
