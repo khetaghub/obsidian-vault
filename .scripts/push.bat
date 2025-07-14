@@ -3,7 +3,7 @@ chcp 65001
 setlocal
 
 set REPO_DIR=../.
-set COMMIT_MSG="Update: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+set COMMIT_MSG="Update: %date% %time%"
 
 :: Проверка Git
 where git >nul 2>&1
