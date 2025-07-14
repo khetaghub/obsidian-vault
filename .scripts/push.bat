@@ -30,8 +30,8 @@ git add --all
 echo Коммитим: %COMMIT_MSG%
 git commit -m %COMMIT_MSG% --quiet 2>nul
 if %errorlevel% neq 0 (
-    echo Нет изменений для коммита. Пропускаем.
-    goto PUSH
+    echo Нет изменений для коммита.
+    goto END
 )
 
 :PUSH
@@ -43,6 +43,7 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
+:END
 echo Успешно залито в GitHub!
 cd ..
 pause
