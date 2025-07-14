@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "711a4a694d63896b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Программирование/SSH.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "SSH"
-            }
-          },
-          {
             "id": "0f3d5512403b99a7",
             "type": "leaf",
             "state": {
@@ -35,8 +21,7 @@
               "title": "Callouts"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "466084f7cd1dcd47",
@@ -205,9 +190,11 @@
   },
   "active": "0f3d5512403b99a7",
   "lastOpenFiles": [
-    "AModule/Узлы.md",
-    "Obsidian/Callouts.md",
     "Obsidian/Плагины для Obsidian.md",
+    "2025-07-14.md",
+    "Без названия.canvas",
+    "Obsidian/Callouts.md",
+    "AModule/Узлы.md",
     "Internal link.md",
     "AModule/Темы для курсов.md",
     "Программирование/SSH.md",
