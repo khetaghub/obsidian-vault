@@ -1,0 +1,9 @@
+.callout[data-callout="bookmark"] {
+    --callout-color: 162, 162, 50;
+    --callout-icon: lucide-bookmark;
+}
+
+.callout[data-callout="target"] {
+  --callout-color: 153, 27, 27;
+  --callout-icon: lucide-target;
+}
