@@ -1,8 +1,8 @@
 @echo off
-chcp 65001
+chcp 65001 >nul
 setlocal
 
-set REPO_DIR=../.
+set "REPO_DIR=../."
 
 :: Проверка Git
 where git >nul 2>&1
@@ -12,21 +12,18 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-if not exist "%REPO_DIR%" (
-    echo Ошибка: Папка "%REPO_DIR%" не найдена. Сначала запустите clone_repo.bat.
+:: Проверка и переход в директорию репозитория
+if not exist "%REPO_DIR%\" (
+    echo Ошибка: Папка репозитория не найдена
     pause
     exit /b 1
 )
 
-cd %REPO_DIR%
-echo Пуллим изменения из удалённого репозитория...
-git pull --quiet
-if %errorlevel% neq 0 (
-    echo Ошибка при пулле.
-    pause
-    exit /b 1
-)
+:: Основная операция
+echo Обновление...
+git pull --quiet --autostash 2>nul
 
-echo Успешно обновлено.
-cd ..
+echo Обновление завершено
+
+:: Завершение
 pause
