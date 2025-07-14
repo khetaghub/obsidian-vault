@@ -29,7 +29,7 @@ cd /d "%REPO_DIR%" || (
 
 :: Проверка наличия изменений
 git diff --quiet --exit-code 2>nul && git diff --cached --quiet --exit-code 2>nul && (
-    echo Рабочая директория чиста. Нет изменений для коммита.
+    echo Нет изменений.
     pause
     exit /b 0
 )
