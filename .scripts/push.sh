@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Конфигурация
-REPO_DIR="../."
+REPO_DIR="./."
 COMMIT_MSG="Update: $(date '+%Y-%m-%d %H:%M:%S')"
 
 # Проверка наличия Git
@@ -24,6 +24,7 @@ cd "$REPO_DIR" || {
     read -p "Нажмите Enter для продолжения..."
     exit 1
 }
+echo "Текущая директория: `pwd`"
 
 # Улучшенная проверка изменений (включая новые файлы)
 if [ -z "$(git status --porcelain)" ]; then

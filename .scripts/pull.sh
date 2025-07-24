@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO_DIR="../."
+REPO_DIR="./"
 
 # Проверка Git
 if ! command -v git &> /dev/null; then
