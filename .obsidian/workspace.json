@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Программирование/SSH.md",
+                "file": "Техника/Ethernet-кабели.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SSH"
+              "title": "Ethernet-кабели"
             }
           }
         ],
@@ -199,10 +199,11 @@
   },
   "active": "0ef86540c76e05ad",
   "lastOpenFiles": [
-    "Техника/Роутеры Keenetic.md",
-    "Программирование/SSH.md",
-    "Техника/Ethernet-кабели.md",
     "Технологии/PoE.md",
+    "Технологии/NFC метки.md",
+    "Программирование/SSH.md",
+    "Техника/Роутеры Keenetic.md",
+    "Техника/Ethernet-кабели.md",
     "Техника/Домашнее видеонаблюдение.md"
   ]
 }
